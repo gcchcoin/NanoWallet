@@ -164,6 +164,8 @@ class TransferTransactionCtrl {
         if (this.formData.isMosaicTransfer) {
             // Set the initial mosaic array
             this.formData.mosaics = this.getInitialMosaics();
+            // In case of mosaic transfer amount is used as multiplier,
+            // set to 1 as default
             this.rawAmount = 1;
             this.formData.amount = 1;
         } else {
