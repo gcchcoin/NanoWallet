@@ -4,9 +4,11 @@ import CryptoHelpers from '../../utils/CryptoHelpers';
 import Network from '../../utils/Network';
 
 class TransferTransactionCtrl {
-    constructor($location, Wallet, Alert, Transactions, NetworkRequests, DataBridge, $state, $localStorage) {
+    constructor(AppConstants, $location, Wallet, Alert, Transactions, NetworkRequests, DataBridge, $state, $localStorage) {
         'ngInject';
 
+        // Application constants
+        this._AppConstants = AppConstants;
         // Alert service
         this._Alert = Alert;
         // $location to redirect
@@ -34,7 +36,7 @@ class TransferTransactionCtrl {
         }
 
         /**
-         * Default transfer transaction properties 
+         * Default transfer transaction properties
          */
         this.formData = {};
         // Alias or address user type in
@@ -119,6 +121,13 @@ class TransferTransactionCtrl {
         this.updateInvoiceQR();
 
         this.updateFees();
+
+        // updateCurrentAccountMosaics() must be called before this
+        if (this.customMosaicExist()) {
+            this.formData.isMosaicTransfer = true;
+            this.setMosaicTransfer();
+        }
+
     }
 
     /**
@@ -154,16 +163,7 @@ class TransferTransactionCtrl {
     setMosaicTransfer() {
         if (this.formData.isMosaicTransfer) {
             // Set the initial mosaic array
-            this.formData.mosaics = [{
-                'mosaicId': {
-                    'namespaceId': 'nem',
-                    'name': 'xem'
-                },
-                'quantity': 0,
-                'gid': 'mos_id_0'
-            }];
-            // In case of mosaic transfer amount is used as multiplier,
-            // set to 1 as default
+            this.formData.mosaics = this.getInitialMosaics();
             this.rawAmount = 1;
             this.formData.amount = 1;
         } else {
@@ -178,7 +178,7 @@ class TransferTransactionCtrl {
 
     /**
      * Process recipient input and get data from network
-     * 
+     *
      * @note: I'm using debounce in view to get data typed with a bit of delay,
      * it limits network requests
      */
@@ -243,7 +243,7 @@ class TransferTransactionCtrl {
 
     /**
      * Get recipient account data from network
-     * 
+     *
      * @param address: The recipient address
      */
     getRecipientData(address) {
@@ -264,7 +264,7 @@ class TransferTransactionCtrl {
 
     /**
      * Get recipient account data from network using @alias
-     * 
+     *
      * @param alias: The recipient alias (namespace)
      */
     getRecipientDataFromAlias(alias) {
@@ -297,7 +297,7 @@ class TransferTransactionCtrl {
      * Get selected mosaic and push it in mosaics array
      */
     attachMosaic() {
-        // increment counter 
+        // increment counter
         this.counter++;
         // Get current account
         let acct = this._Wallet.currentAccount.address;
@@ -325,8 +325,8 @@ class TransferTransactionCtrl {
 
     /**
      * Remove a mosaic from mosaics array
-     * 
-     * @param index: Index of mosaic object in the array 
+     *
+     * @param index: Index of mosaic object in the array
      */
     removeMosaic(index) {
         this.formData.mosaics.splice(index, 1);
@@ -350,13 +350,18 @@ class TransferTransactionCtrl {
             // Set current account mosaics names if mosaicOwned is not undefined
             if (undefined !== this._DataBridge.mosaicOwned[acct]) {
                 this.currentAccountMosaicData = this._DataBridge.mosaicOwned[acct];
-                this.currentAccountMosaicNames = Object.keys(this._DataBridge.mosaicOwned[acct]).sort(); 
+                this.currentAccountMosaicNames = Object.keys(this._DataBridge.mosaicOwned[acct]).sort();
             } else {
-                this.currentAccountMosaicNames = ["nem:xem"]; 
+                this.currentAccountMosaicNames = ["nem:xem"];
                 this.currentAccountMosaicData = "";
             }
             // Default selected is nem:xem
-            this.selectedMosaic = "nem:xem";
+            if (this.customMosaicExist()) {
+                this.selectedMosaic = this._AppConstants.customMosaic;
+            } else {
+                // By default select "nem:xem" mosaic
+                this.selectedMosaic = 'nem:xem';
+            }
     }
 
     /**
@@ -429,6 +434,47 @@ class TransferTransactionCtrl {
                 this.okPressed = false;
                 this._Alert.transactionError('Failed ' + err.data.error + " " + err.data.message);
             });
+    }
+
+    /**
+     * Gets the initial Mosaic array.  If the wallet contains the configured custom mosaic then that mosaic
+     * will be the initial one, otherwise nem:xem will be.
+     */
+    getInitialMosaics() {
+
+        if (this.customMosaicExist()) {
+            return [{
+                'mosaicId': {
+                    'namespaceId': this._AppConstants.customMosaicNamespaceId,
+                    'name': this._AppConstants.customMosaicName
+                },
+                'quantity': 0,
+                'gid': 'mos_id_0'
+            }];
+        } else {
+            return [{
+                'mosaicId': {
+                    'namespaceId': 'nem',
+                    'name': 'xem'
+                },
+                'quantity': 0,
+                'gid': 'mos_id_0'
+            }];
+        }
+
+    }
+
+    /**
+     * Checks to see if the wallet contains custom configured mosaic.
+     */
+    customMosaicExist() {
+
+        let mosaicsFound = this.currentAccountMosaicNames.filter((mosaicName) => {
+            return mosaicName == this._AppConstants.customMosaic;
+        });
+
+        return mosaicsFound.length > 0
+
     }
 
 }
