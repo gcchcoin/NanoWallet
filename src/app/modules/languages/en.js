@@ -173,7 +173,7 @@ function EnglishProvider($translateProvider) {
         LINE_TX_DETAILS_FROM_MULTISIG: 'From multisig',
         LINE_TX_DETAILS_WAITING: 'Transaction waiting to be included',
         LINE_TX_DETAILS_NEED_SIG: 'Needs cosignatories signatures',
-        LINE_TX_DETAILS_NEED_SIG_2: 'This transaction needs your signature',
+        LINE_TX_DETAILS_NEED_SIG_2: 'Needs your signature',
         LINE_TX_DETAILS_MESS_ENC: 'Encrypted',
         LINE_TX_DETAILS_MESS_DEC: 'Decode',
         LINE_TX_DETAILS_HASH: 'Hash',
@@ -553,6 +553,8 @@ function EnglishProvider($translateProvider) {
         ALERT_BTC_MARKET_ERROR: 'Error while trying to fetch Bitcoin price',
         ALERT_COSIG_REMOVAL_LIMIT: 'Only one cosignatory at a time can be removed',
         ALERT_MULTISIG_MIN_SIGNATURE_INVALID: 'Invalid number of minimum signatures',
+        ALERT_INSUFFICIENT_BALANCE: 'Insufficient Balance for performing the operation',
+        ALERT_VOTING_ERROR: 'Invalid Vote',
 
         // SUCCESS ALERTS
         ALERT_CREATE_WALLET_SUCCESS: 'Wallet successfully created and loaded !',
@@ -566,6 +568,8 @@ function EnglishProvider($translateProvider) {
         ALERT_NTY_FILE_SUCCESS: 'Successfully loaded nty file !',
         ALERT_INCOMING_TX_FROM: 'Incoming transaction from ',
         ALERT_ADDRESS_BOOK_FILE_SUCCESS: 'Address book successfully imported !',
+        ALERT_VOTING_SUCCESS: 'Vote Sent Successfully',
+        ALERT_POLL_CREATION_SUCCESS: 'Poll Created Successfully',
 
         // CONVERT ACCOUNT TO MULTISIG
         AGGREGATE_MODIFICATION_TITLE: 'Convert an account to multisig',
@@ -681,7 +685,17 @@ function EnglishProvider($translateProvider) {
         FORM_SIDE_BTN_ALIAS_OF: 'Alias of',
         FORM_MESSAGE_PLACEHOLDER: 'Message',
         FORM_MOSAIC_NAME_PLACEHOLDER: 'Mosaic name',
-        FORM_ADDRESS_ALIAS_PLACEHOLDER: 'Account address or @alias'
+        FORM_ADDRESS_ALIAS_PLACEHOLDER: 'Account address or @alias',
+
+        // VOTING MODULE
+        PORTAL_VOTING_TITLE: 'Voting',
+        PORTAL_VOTING_TEXT: 'Create and vote on polls',
+        PORTAL_VOTING_BTN1: 'See Polls',
+        PORTAL_VOTING_BTN2: 'Create Poll',
+        FORM_TITLE_FIELD_PLACEHOLDER: 'Title',
+        FORM_DESCRIPTION_FIELD_PLACEHOLDER: 'Write your description here',
+        FORM_OPTION_FIELD_PLACEHOLDER: 'write option',
+        FORM_WHITELIST_FIELD_PLACEHOLDER: 'account address'
     });
 
 }
