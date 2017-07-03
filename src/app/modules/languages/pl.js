@@ -4,8 +4,8 @@ function PolishProvider($translateProvider) {
     $translateProvider.translations('pl', {
 
         // HEADER COMPONENT
-        WALLET_NAME_1: 'nano',
-        WALLET_NAME_2: 'Wallet',
+        WALLET_NAME_1: 'gcch',
+        WALLET_NAME_2: 'Classic',
         APP_NAME_SUB: 'Bezpieczny interfejs łączący z platformą NEM',
         HEADER_LOGIN_BUTTON: 'Logowanie',
         HEADER_SIGNUP_BUTTON: 'Rejestracja',

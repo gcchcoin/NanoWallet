@@ -4,8 +4,8 @@ function ChineseProvider($translateProvider) {
     $translateProvider.translations('cn', {
 
         // HEADER COMPONENT
-        WALLET_NAME_1: 'nano',
-        WALLET_NAME_2: 'Wallet',
+        WALLET_NAME_1: 'gcch',
+        WALLET_NAME_2: 'Classic',
         APP_NAME_SUB: '安全界面正在连接NEM平台',
         HEADER_LOGIN_BUTTON: '登录',
         HEADER_SIGNUP_BUTTON: '注册',

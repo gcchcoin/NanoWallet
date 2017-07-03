@@ -4,8 +4,8 @@ function RussianProvider($translateProvider) {
     $translateProvider.translations('ru', {
 
         // HEADER COMPONENT
-        WALLET_NAME_1: 'nano',
-        WALLET_NAME_2: 'Wallet',
+        WALLET_NAME_1: 'gcch',
+        WALLET_NAME_2: 'Classic',
         APP_NAME_SUB: 'Интерфейс безопасного подключения к платформе NEM',
         HEADER_LOGIN_BUTTON: 'Вход',
         HEADER_SIGNUP_BUTTON: 'Регистрация',
