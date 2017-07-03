@@ -1,6 +1,11 @@
 const AppConstants = {
+
+    customMosaic: 'gcch:classic',
+    customMosaicNamespaceId: 'gcch',
+    customMosaicName: 'classic',
+
     //Application name
-    appName: 'Nano Wallet',
+    appName: 'GCCH Classic Wallet',
 
     version: 'BETA 1.3.12',
 

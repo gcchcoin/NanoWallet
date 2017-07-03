@@ -4,8 +4,8 @@ function GermanProvider($translateProvider) {
     $translateProvider.translations('de', {
 
         // HEADER COMPONENT
-        WALLET_NAME_1: 'nano',
-        WALLET_NAME_2: 'Wallet',
+        WALLET_NAME_1: 'gcch',
+        WALLET_NAME_2: 'Classic',
         APP_NAME_SUB: 'Die sichere Schnittstelle zur NEM Plattform',
         HEADER_LOGIN_BUTTON: 'Anmelden',
         HEADER_SIGNUP_BUTTON: 'Registrieren',
@@ -224,9 +224,9 @@ function GermanProvider($translateProvider) {
         IMPORTANCE_TRANSFER_MULTISIG_SELECT_MESSAGE: 'Bitte ein Multi-Signatur Konto auswählen um den Status zu sehen',
         IMPORTANCE_TRANSFER_PRIVATE_KEY_PLACEHOLDER: 'Delegierten privaten Schlüssel anzeigen',
         IMPORTANCE_TRANSFER_DELEGATED_KEYS: 'Delegierte Kontoadresse',
-        IMPORTANCE_TRANSFER_HARVESTING_STATUS: 'Harvesting Status', 
+        IMPORTANCE_TRANSFER_HARVESTING_STATUS: 'Harvesting Status',
         IMPORTANCE_TRANSFER_START_HARVESTING: 'Delegiertes Harvesting starten',
-        IMPORTANCE_TRANSFER_STOP_HARVESTING: 'Delegiertes Harvesting beenden',   
+        IMPORTANCE_TRANSFER_STOP_HARVESTING: 'Delegiertes Harvesting beenden',
 
         // CREATE MOSAIC MODULE
         MOSAIC_DEFINITION_TITLE: 'Mosaik erstellen',

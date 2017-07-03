@@ -4,8 +4,8 @@ function JapaneseProvider($translateProvider) {
     $translateProvider.translations('jp', {
 
       // HEADER COMPONENT
-      WALLET_NAME_1: 'nano',
-      WALLET_NAME_2: 'Wallet',
+      WALLET_NAME_1: 'gcch',
+      WALLET_NAME_2: 'Classic',
       APP_NAME_SUB: "NEM プラットフォームに接続するための安全な方法\n(ボランティアによる日本語翻訳版)",
       HEADER_LOGIN_BUTTON: "ログイン",
       HEADER_SIGNUP_BUTTON: "アカウントの作成",
@@ -57,7 +57,7 @@ function JapaneseProvider($translateProvider) {
       DASHBOARD_NOTICE_3: 'NEM チームは、メインネットを利用する前に、最初にテストネットにて NanoWallet の操作を行い、利用方法を習得する事をお勧めします。英文のガイドブックは<a href="https://blog.nem.io/nanowallet-tutorial/" target="_blank">こちら</a>にあります。利用者は自身の資金を管理し、秘密鍵をバックアップしてください。NEM チームは、メインネット上でこのアプリケーションを利用することに起因する、資金の消失について責任を負いません。',
       DASHBOARD_NOTICE_4: '紙に秘密鍵を書き留めて、安全な場所に保存することをお勧めします。また、あなたのアカウントをAndroid 及び iOS アプリにインポートして、バックアップする事もできます。',
       DASHBOARD_NOTICE_5: 'Thanks for your participation!', //すまねぇ、ここどう訳すか迷ってそのままｗ
-      
+
       // GENERAL
       GENERAL_BLOCK: "ブロック",
       GENERAL_BLOCKS: 'ブロック',
@@ -148,7 +148,7 @@ function JapaneseProvider($translateProvider) {
       GENERAL_ACTIVATING: "有効化中",
       GENERAL_DEACTIVATING: "無効化中",
       GENERAL_REMOTE: "リモート",
-        
+
       // HOME MODULE
       HOME_UNSUPPORTED_BROWSER: '申し訳ありません。このブラウザでは安全に NanoWallet を使用する事ができません。',
       HOME_RECOMMENDED_BROWSERS: '推奨ブラウザ：',
