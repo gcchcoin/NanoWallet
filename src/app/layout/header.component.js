@@ -35,6 +35,8 @@ class AppHeaderCtrl {
         // Available languages
         this.languages = AppConstants.languages;
 
+        this.currentAccountMosaicNames = [];
+
         /**
          * Watch if a wallet is set and set the right nodes
          */
@@ -57,6 +59,10 @@ class AppHeaderCtrl {
 
             // Set wallet name
             this.walletName = val.name;
+
+            // Init account mosaics
+            this.updateCurrentAccountMosaics();
+
         });
 
         /**
@@ -165,6 +171,69 @@ class AppHeaderCtrl {
             'uri': node
         }, this._Wallet.currentAccount.address);
         this._DataBridge.openConnection(connector);
+    }
+
+    getGcchcBalance() {
+
+        this.updateCurrentAccountMosaics();
+
+        if (this.customMosaicExist()) {
+            let customMosaic = this.getCustomMosaic()
+            if (undefined !== customMosaic) {
+                return this._$filter('fmtSupply')(customMosaic.quantity, customMosaic.mosaicId, this._DataBridge.mosaicDefinitionMetaDataPair)[0]
+                + '.'
+                + this._$filter('fmtSupply')(customMosaic.quantity, customMosaic.mosaicId, this._DataBridge.mosaicDefinitionMetaDataPair)[1]
+            }
+        }
+
+        return '0.000000';
+
+    }
+
+    /**
+     * Get current account mosaics names
+     */
+    updateCurrentAccountMosaics() {
+
+        if (undefined === this._Wallet.currentAccount) {
+            return;
+        }
+
+        // Get current account
+        let acct = this._Wallet.currentAccount.address;
+
+        // Set current account mosaics names if mosaicOwned is not undefined
+        if (undefined !== this._DataBridge.mosaicOwned[acct]) {
+            this.currentAccountMosaicNames = Object.keys(this._DataBridge.mosaicOwned[acct]).sort();
+        } else {
+            this.currentAccountMosaicNames = ["nem:xem"];
+        }
+
+    }
+
+    /**
+     * Checks to see if the wallet contains custom configured mosaic.
+     */
+    customMosaicExist() {
+
+        let mosaicsFound = this.currentAccountMosaicNames.filter((mosaicName) => {
+            return mosaicName == this._AppConstants.customMosaic;
+        });
+
+        return mosaicsFound.length > 0
+
+    }
+
+    getCustomMosaic() {
+
+        if (undefined === this._Wallet.currentAccount) {
+            return undefined;
+        }
+
+        // Get current account
+        let acct = this._Wallet.currentAccount.address;
+        return this._DataBridge.mosaicOwned[acct][this._AppConstants.customMosaic];
+
     }
 
 }
