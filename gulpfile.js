@@ -124,13 +124,14 @@ gulp.task('views', function() {
 // Build App
 gulp.task('app', function () {
     var nw = new NwBuilder({
+        appName: 'gcchClassic',
         version: '0.14.6',
         files: './build/**',
         buildDir: './dist',
         buildType: 'versioned',
         winIco: './build/images/logomark.ico',
         macIcns: './build/images/NanoWallet.icns',
-        platforms: ['win64', 'osx64', 'linux32']
+        platforms: ['win', 'osx64', 'linux64']
     });
     // Log stuff you want
     nw.on('log', function (msg) {

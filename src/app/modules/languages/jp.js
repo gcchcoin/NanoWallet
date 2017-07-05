@@ -4,8 +4,8 @@ function JapaneseProvider($translateProvider) {
     $translateProvider.translations('jp', {
 
       // HEADER COMPONENT
-      WALLET_NAME_1: 'nano',
-      WALLET_NAME_2: 'Wallet',
+      WALLET_NAME_1: 'gcch',
+      WALLET_NAME_2: 'Classic',
       APP_NAME_SUB: "NEM プラットフォームに接続するための安全な方法\n(ボランティアによる日本語翻訳版)",
       HEADER_LOGIN_BUTTON: "ログイン",
       HEADER_SIGNUP_BUTTON: "アカウントの作成",
@@ -57,7 +57,7 @@ function JapaneseProvider($translateProvider) {
       DASHBOARD_NOTICE_3: 'NEM チームは、メインネットを利用する前に、最初にテストネットにて NanoWallet の操作を行い、利用方法を習得する事をお勧めします。英文のガイドブックは<a href="https://blog.nem.io/nanowallet-tutorial/" target="_blank">こちら</a>にあります。利用者は自身の資金を管理し、秘密鍵をバックアップしてください。NEM チームは、メインネット上でこのアプリケーションを利用することに起因する、資金の消失について責任を負いません。',
       DASHBOARD_NOTICE_4: '紙に秘密鍵を書き留めて、安全な場所に保存することをお勧めします。また、あなたのアカウントをAndroid 及び iOS アプリにインポートして、バックアップする事もできます。',
       DASHBOARD_NOTICE_5: 'Thanks for your participation!', //すまねぇ、ここどう訳すか迷ってそのままｗ
-      
+
       // GENERAL
       GENERAL_BLOCK: "ブロック",
       GENERAL_BLOCKS: 'ブロック',
@@ -148,7 +148,7 @@ function JapaneseProvider($translateProvider) {
       GENERAL_ACTIVATING: "有効化中",
       GENERAL_DEACTIVATING: "無効化中",
       GENERAL_REMOTE: "リモート",
-        
+
       // HOME MODULE
       HOME_UNSUPPORTED_BROWSER: '申し訳ありません。このブラウザでは安全に NanoWallet を使用する事ができません。',
       HOME_RECOMMENDED_BROWSERS: '推奨ブラウザ：',
@@ -553,6 +553,8 @@ function JapaneseProvider($translateProvider) {
       ALERT_BTC_MARKET_ERROR: 'Bitcoinの価格の取得に失敗しました',
       ALERT_COSIG_REMOVAL_LIMIT: '一度に削除できる署名者は1名だけです',
       ALERT_MULTISIG_MIN_SIGNATURE_INVALID: '最小署名者数が無効な値です',
+      ALERT_INSUFFICIENT_BALANCE: 'Insufficient Balance for performing the operation',
+      ALERT_VOTING_ERROR: 'Invalid Vote',
 
       // SUCCESS ALERTS
       ALERT_CREATE_WALLET_SUCCESS: "ウォレットが正常に作成され、ロードされました。",
@@ -566,6 +568,8 @@ function JapaneseProvider($translateProvider) {
       ALERT_NTY_FILE_SUCCESS: ".nty ファイルは正常にロードされました。",
       ALERT_INCOMING_TX_FROM: "トランザクションを受信",
       ALERT_ADDRESS_BOOK_FILE_SUCCESS: 'アドレス帳のインポートに成功しました!',
+      ALERT_VOTING_SUCCESS: 'Vote Sent Successfully',
+      ALERT_POLL_CREATION_SUCCESS: 'Poll Created Successfully',
 
       // CONVERT ACCOUNT TO MULTISIG
       AGGREGATE_MODIFICATION_TITLE: "マルチシグアカウントへ変換",
@@ -683,7 +687,17 @@ function JapaneseProvider($translateProvider) {
       FORM_SIDE_BTN_ALIAS_OF: "エイリアス",
       FORM_MESSAGE_PLACEHOLDER: "メッセージ",
       FORM_MOSAIC_NAME_PLACEHOLDER: "モザイク名",
-      FORM_ADDRESS_ALIAS_PLACEHOLDER: 'アカウントアドレス 又は @エイリアス名'
+      FORM_ADDRESS_ALIAS_PLACEHOLDER: 'アカウントアドレス 又は @エイリアス名',
+
+      // VOTING MODULE
+      PORTAL_VOTING_TITLE: 'Voting',
+      PORTAL_VOTING_TEXT: 'Create and vote on polls',
+      PORTAL_VOTING_BTN1: 'See Polls',
+      PORTAL_VOTING_BTN2: 'Create Poll',
+      FORM_TITLE_FIELD_PLACEHOLDER: 'Title',
+      FORM_DESCRIPTION_FIELD_PLACEHOLDER: 'Write your description here',
+      FORM_OPTION_FIELD_PLACEHOLDER: 'write option',
+      FORM_WHITELIST_FIELD_PLACEHOLDER: 'account address'
     });
 
 }
