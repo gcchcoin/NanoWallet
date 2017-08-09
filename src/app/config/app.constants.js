@@ -7,7 +7,8 @@ const AppConstants = {
     //Application name
     appName: 'GCCH Classic Wallet',
 
-    version: 'BETA 1.4.3',
+    // version: 'BETA 1.4.3',
+    version: 'GCCHC 1.0.1',
 
     //Network
     defaultNetwork: 104,
