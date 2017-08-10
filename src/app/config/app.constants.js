@@ -1,8 +1,8 @@
 const AppConstants = {
 
-    customMosaic: 'gcch:classic',
+    customMosaic: 'gcch:classiccoin',
     customMosaicNamespaceId: 'gcch',
-    customMosaicName: 'classic',
+    customMosaicName: 'classiccoin',
 
     //Application name
     appName: 'GCCH Classic Wallet',
