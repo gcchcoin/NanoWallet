@@ -1,13 +1,14 @@
 const AppConstants = {
 
-    customMosaic: 'gcch:classic',
+    customMosaic: 'gcch:classiccoin',
     customMosaicNamespaceId: 'gcch',
-    customMosaicName: 'classic',
+    customMosaicName: 'classiccoin',
 
     //Application name
     appName: 'GCCH Classic Wallet',
 
-    version: 'BETA 1.4.0',
+    // version: 'BETA 1.4.3',
+    version: 'GCCHC 1.0.1',
 
     //Network
     defaultNetwork: 104,

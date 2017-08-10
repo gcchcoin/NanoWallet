@@ -52,8 +52,8 @@ function JapaneseProvider($translateProvider) {
       DASHBOARD_MARKET_INFO_CHANGES_24H: "24時間",
       DASHBOARD_MARKET_INFO_CHANGES_7D: "7日間",
       DASHBOARD_MARKET_INFO_NOTE: "<a href=\"http://coinmarketcap.com/\" target=\"_blank\">CoinMarketCap</a> CoinMarketCapのデータは 5 分毎に更新されます。",
-      DASHBOARD_NOTICE_1: 'Nano Wallet Beta にようこそ！',
-      DASHBOARD_NOTICE_2: '問題の報告は<a href="https://github.com/NemProject/NanoWallet" target="_blank">こちら</a>へお願いします。',
+      DASHBOARD_NOTICE_1: 'GCCH Classic Wallet にようこそ！',
+      DASHBOARD_NOTICE_2: '問題の報告は<a href="mailto:dkumi2017@gmail.com?Subject=GCCH%20Classic%20Wallet%20Issue" target="_blank">こちら</a>へお願いします。',
       DASHBOARD_NOTICE_3: 'NEM チームは、メインネットを利用する前に、最初にテストネットにて NanoWallet の操作を行い、利用方法を習得する事をお勧めします。英文のガイドブックは<a href="https://blog.nem.io/nanowallet-tutorial/" target="_blank">こちら</a>にあります。利用者は自身の資金を管理し、秘密鍵をバックアップしてください。NEM チームは、メインネット上でこのアプリケーションを利用することに起因する、資金の消失について責任を負いません。',
       DASHBOARD_NOTICE_4: '紙に秘密鍵を書き留めて、安全な場所に保存することをお勧めします。また、あなたのアカウントをAndroid 及び iOS アプリにインポートして、バックアップする事もできます。',
       DASHBOARD_NOTICE_5: 'Thanks for your participation!', //すまねぇ、ここどう訳すか迷ってそのままｗ
